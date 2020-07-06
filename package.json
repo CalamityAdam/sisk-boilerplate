@@ -1,10 +1,16 @@
 {
-  "name": " ",
+  "name": "sisk-boilerplate",
   "version": "0.0.1",
-  "description": "",
-  "keywords": "",
-  "license": "",
-  "author": "",
+  "description": "adam sisk's html/css/js boilerplate",
+  "keywords": [
+    "boilerplate",
+    "html",
+    "css",
+    "js",
+    "javascript"
+  ],
+  "license": "MIT",
+  "author": "Adam Sisk",
   "scripts": {
     "build": "parcel build index.html",
     "dev": "parcel index.html --open",
