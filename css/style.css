@@ -1,7 +1,8 @@
-@import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400|Montserrat:400');
+/* @import url('https://fonts.googleapis.com/css?family=Libre+Baskerville:400|Montserrat:400'); */
+@import url('https://fonts.googleapis.com/css?family=Space+Mono:400|Roboto:400');
 
 :root {
-  /* colors */
+  /* Colors */
   --black: #222;
   --softBlack: #333;
   --blackAlternate: #1b2d45;
@@ -13,7 +14,7 @@
   --lightGray: #f2f4f6;
   --white: #dbdbdb;
 
-  /* color intentions */
+  /* Color Intentions */
   --primary: var(--green);
   --danger: var(--red);
   --background: var(--white);
@@ -24,19 +25,33 @@
   --line: solid 1px var(--lineColor);
 
   /* Type */
-  --headingFont: 'Libre Baskerville';
-  --bodyFont: 'Montserrat';
+  --headingFont: 'Space Mono';
+  --bodyFont: 'Roboto';
   --h1: 3.052em;
   --h2: 2.441em;
   --h3: 1.953em;
   --h4: 1.563em;
   --h5: 1.25em;
   --smallText: 0.8em;
+
+  /* Elevation */
+  --shadow-s: 0 1px 3px 0 rgba(0, 0, 0, 0.1),
+    0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  --shadow-m: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-l: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
+  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
 }
 
 /* https://type-scale.com/ */
 
-html {font-size: 112.5%;} /*18px*/
+html {
+  font-size: 112.5%;
+} /*18px*/
 
 body {
   font-family: var(--bodyFont), sans-serif;
@@ -57,9 +72,13 @@ blockquote a {
   border-bottom: solid 2px var(--primary);
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   margin: 2.75rem 0 1.05rem;
-  font-family: var(--headingFont), serif;
+  font-family: var(--headingFont), monospace;
   font-weight: 400;
   line-height: 1.15;
 }
@@ -69,15 +88,26 @@ h1 {
   font-size: var(--h1);
 }
 
-h2 {font-size: var(--h2);}
+h2 {
+  font-size: var(--h2);
+}
 
-h3 {font-size: var(--h3);}
+h3 {
+  font-size: var(--h3);
+}
 
-h4 {font-size: var(--h4);}
+h4 {
+  font-size: var(--h4);
+}
 
-h5 {font-size: var(--h5);}
+h5 {
+  font-size: var(--h5);
+}
 
-small, .text_small {font-size: var(--smallText);}
+small,
+.text_small {
+  font-size: var(--smallText);
+}
 
 /* /type-scale */
 
@@ -96,6 +126,7 @@ blockquote {
   margin: 10px;
   padding: 2em;
   background: white;
+  box-shadow: var(--shadow-l);
 }
 
 label {
@@ -107,7 +138,15 @@ input,
 textarea {
   padding: 4px 5px;
   border: var(--line);
-  border-radius: 5px;
+  border: none;
+  box-shadow: var(--shadow-inner);
+  border-radius: 7px;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: var(--shadow-outline);
 }
 
 textarea {
@@ -129,18 +168,21 @@ hr {
 
 button {
   --buttonColor: var(--primary);
+  --buttonFont: var(--headingFont);
 
   appearance: none;
+  font-family: var(--buttonFont);
   color: var(--textColor);
   background-color: var(--buttonColor);
   border: none;
   border-radius: 7px;
   padding: 5px 25px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  box-shadow: var(--shadow-s);
+  transition: 0.3s ease-in-out box-shadow;
 }
 
 button:hover {
-
+  box-shadow: var(--shadow-m);
 }
 
 button[disabled] {
