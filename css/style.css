@@ -198,3 +198,28 @@ button.small {
   font-size: var(--smallText);
   padding: 5px 10px;
 }
+
+.layout {
+  margin: 0 auto;
+  width: 95%;
+}
+
+.grid {
+  --gridCols: 2;
+  display: grid;
+  grid-template-columns: repeat(var(--gridCols), 1fr);
+}
+
+.cols-3 {
+  --gridCols: 3;
+}
+
+.flex {
+  --justifyContent: space-between;
+  display: flex;
+  justify-content: var(--justifyContent);
+}
+
+.flex-around {
+  --justifyContent: space-around;
+}
