@@ -90,3 +90,10 @@ body {
   --background: var(--blackAlternate);
   --textColor: var(--white);
 }
+
+blockquote {
+  /* border: solid 1px var(--gray); */
+  margin: 10px;
+  padding: 2em;
+  background: white;
+}
