@@ -10,6 +10,7 @@
   --yellow: #fde24f;
   --green: #00ebc7;
   --darkBlue: #00214d;
+  --lightBlue: #338BFF;
   --gray: #bfbfbf;
   --lightGray: #f2f4f6;
   --white: #dbdbdb;
@@ -27,6 +28,7 @@
   /* Type */
   --headingFont: 'Space Mono';
   --bodyFont: 'Roboto';
+  --baseFontSize: 100%; /* 16px */
   --h1: 3.052em;
   --h2: 2.441em;
   --h3: 1.953em;
@@ -44,17 +46,19 @@
   --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   --shadow-inner: inset 0 2px 4px 0 rgba(0, 0, 0, 0.06);
-  --shadow-outline: 0 0 0 3px rgba(66, 153, 225, 0.5);
+  --shadow-outline: 0 0 0 3px rgba(51, 139, 255, 0.5);
 }
 
 /* https://type-scale.com/ */
 
 html {
-  font-size: 112.5%;
-} /*18px*/
+  font-size: var(--baseFontSize);
+}
 
 body {
   font-family: var(--bodyFont), sans-serif;
+  background: var(--background);
+  color: var(--textColor);
   font-weight: 400;
   line-height: 1.65;
   padding-bottom: 700px; /* ! TEMPORARY */
@@ -109,20 +113,12 @@ small,
   font-size: var(--smallText);
 }
 
-/* /type-scale */
-
-body {
-  background: var(--background);
-  color: var(--textColor);
-}
-
 .dark {
   --background: var(--blackAlternate);
   --textColor: var(--white);
 }
 
 blockquote {
-  /* border: solid 1px var(--gray); */
   margin: 10px;
   padding: 2em;
   background: white;
@@ -206,7 +202,7 @@ button.small {
 
 .grid {
   --gridCols: 2;
-  display: grid;
+  display: block;
   grid-template-columns: repeat(var(--gridCols), 1fr);
 }
 
@@ -222,4 +218,18 @@ button.small {
 
 .flex-around {
   --justifyContent: space-around;
+}
+
+@media only screen and (min-width: 600px) {
+  :root {
+    --baseFontSize: 112.5%; /* 18px */
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .flex {
+    display: flex;
+  }
 }
