@@ -4,23 +4,25 @@
 :root {
   /* Colors */
   --black: #222;
-  --softBlack: #333;
   --blackAlternate: #1b2d45;
-  --red: #ff5470;
-  --yellow: #fde24f;
-  --green: #00ebc7;
   --darkBlue: #00214d;
-  --lightBlue: #338bff;
   --gray: #bfbfbf;
+  --green: #00ebc7;
+  --lightBlue: #338bff;
   --lightGray: #f2f4f6;
-  --white: #dbdbdb;
+  --offWhite: #dbdbdb;
+  --red: #ff5470;
+  --softBlack: #333;
+  --white: #fff;
+  --yellow: #fde24f;
 
   /* Color Intentions */
-  --primary: var(--green);
+  --background: var(--offWhite);
+  --cardBg: var(--white);
   --danger: var(--red);
-  --background: var(--white);
-  --textColor: var(--black);
   --lineColor: var(--gray);
+  --primary: var(--green);
+  --textColor: var(--black);
 
   /* Styles */
   --line: solid 1px var(--lineColor);
@@ -55,6 +57,7 @@
   /* Positiong */
   --containerPadding: 2.5%;
   --headerHeight: 3rem;
+  --borderRadius: 7px;
 }
 
 /* https://type-scale.com/ */
@@ -72,7 +75,6 @@ html {
 
 body {
   background: var(--background);
-  padding-bottom: 700px; /* ! TEMPORARY */
   line-height: 1.65;
   color: var(--textColor);
   font-family: var(--bodyFont), sans-serif;
@@ -93,7 +95,30 @@ header {
   padding: 0 var(--containerPadding);
   width: 100%;
   height: var(--headerHeight);
-  color: var(--white);
+  color: var(--offWhite);
+}
+
+footer {
+  --footerTextColor: var(--gray);
+
+  background: var(--black);
+  padding: 2rem var(--containerPadding);
+  text-align: center;
+  color: var(--footerTextColor);
+}
+
+footer p {
+  margin-bottom: 0;
+  max-width: none;
+}
+
+footer a {
+  color: var(--foooterTextColor);
+}
+
+footer small {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 p a,
@@ -106,7 +131,7 @@ blockquote a {
 header nav a {
   border-bottom: solid 2px var(--yellow);
   text-decoration: none;
-  color: white;
+  color: var(--offWhite);
 }
 
 header nav a + a {
@@ -157,13 +182,13 @@ small,
 
 .dark {
   --background: var(--blackAlternate);
-  --textColor: var(--white);
+  --textColor: var(--offWhite);
 }
 
 blockquote {
   margin: 10px;
   box-shadow: var(--shadow-l);
-  background: white;
+  background: var(--white);
   padding: 2em;
 }
 
@@ -175,7 +200,7 @@ label {
 input,
 textarea {
   border: none;
-  border-radius: 7px;
+  border-radius: var(--borderRadius);
   box-shadow: var(--shadow-inner);
   padding: 4px 5px;
 }
@@ -210,7 +235,7 @@ button {
   appearance: none;
   transition: 0.3s ease-in-out box-shadow;
   border: none;
-  border-radius: 7px;
+  border-radius: var(--borderRadius);
   box-shadow: var(--shadow-s);
   background-color: var(--buttonColor);
   padding: 5px 25px;
@@ -228,7 +253,7 @@ button[disabled] {
 
 button.cancel {
   --buttonColor: var(--danger);
-  --textColor: white;
+  --textColor: var(--offWhite);
 }
 
 button.small {
@@ -270,7 +295,27 @@ button.small {
   font-size: var(--baseFontSize);
 }
 
+.card {
+  margin: 10px;
+  border-radius: var(--borderRadius);
+  box-shadow: var(--shadow-l);
+  background: var(--cardBg);
+  padding: 2em;
+}
+
+.card > *:first-child {
+  margin-top: 0;
+}
+
+.card > *:last-child {
+  margin-bottom: 0;
+}
+
 @media only screen and (min-width: 600px) {
+  footer small {
+    float: right;
+  }
+
   :root {
     --baseFontSize: 112.5%; /* 18px */
   }
