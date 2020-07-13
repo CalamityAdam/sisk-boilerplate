@@ -18,8 +18,12 @@
 
   /* Color Intentions */
   --background: var(--offWhite);
+  --buttonColor: var(--primary);
+  --buttonTextColor: var(--black);
   --cardBg: var(--white);
   --danger: var(--red);
+  --footerBackground: var(--black);
+  --headerBackground: var(--lightBlue);
   --lineColor: var(--gray);
   --primary: var(--green);
   --textColor: var(--black);
@@ -30,6 +34,7 @@
   /* Type */
   --headingFont: 'Space Mono';
   --bodyFont: 'Roboto';
+  --buttonFont: var(--headingFont);
   --baseFontSize: 100%; /* 16px */
   --h1: 3.052em;
   --h2: 2.441em;
@@ -82,8 +87,6 @@ body {
 }
 
 header {
-  --headerBackground: var(--lightBlue);
-
   display: flex;
   position: fixed;
   top: 0;
@@ -101,7 +104,7 @@ header {
 footer {
   --footerTextColor: var(--gray);
 
-  background: var(--black);
+  background: var(--footerBackground);
   padding: 2rem var(--containerPadding);
   text-align: center;
   color: var(--footerTextColor);
@@ -125,7 +128,7 @@ p a,
 blockquote a {
   border-bottom: solid 2px var(--primary);
   text-decoration: none;
-  color: var(--black);
+  color: var(--textColor);
 }
 
 header nav a {
@@ -180,11 +183,6 @@ small,
   font-size: var(--smallText);
 }
 
-.dark {
-  --background: var(--blackAlternate);
-  --textColor: var(--offWhite);
-}
-
 blockquote {
   margin: 10px;
   box-shadow: var(--shadow-l);
@@ -229,9 +227,6 @@ hr {
 }
 
 button {
-  --buttonColor: var(--primary);
-  --buttonFont: var(--headingFont);
-
   appearance: none;
   transition: 0.3s ease-in-out box-shadow;
   border: none;
@@ -239,7 +234,7 @@ button {
   box-shadow: var(--shadow-s);
   background-color: var(--buttonColor);
   padding: 5px 25px;
-  color: var(--textColor);
+  color: var(--buttonTextColor);
   font-family: var(--buttonFont);
 }
 
@@ -279,6 +274,11 @@ button.small {
   --gridCols: 3;
 }
 
+.grid--split {
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
 .flex {
   --justifyContent: space-between;
 
@@ -309,6 +309,13 @@ button.small {
 
 .card > *:last-child {
   margin-bottom: 0;
+}
+
+.dark {
+  --background: var(--blackAlternate);
+  --textColor: var(--offWhite);
+  --headerBackground: var(--black);
+  --cardBg: var(--black);
 }
 
 @media only screen and (min-width: 600px) {
