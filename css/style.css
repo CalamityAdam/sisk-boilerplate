@@ -32,15 +32,15 @@
   --line: solid 1px var(--lineColor);
 
   /* Type */
-  --headingFont: 'Space Mono';
+  --baseFontSize: 100%; /* 16px */
   --bodyFont: 'Roboto';
   --buttonFont: var(--headingFont);
-  --baseFontSize: 100%; /* 16px */
   --h1: 3.052em;
   --h2: 2.441em;
   --h3: 1.953em;
   --h4: 1.563em;
   --h5: 1.25em;
+  --headingFont: 'Space Mono';
   --smallText: 0.8em;
 
   /* Elevation */
@@ -110,6 +110,11 @@ footer {
   color: var(--footerTextColor);
 }
 
+p {
+  margin-bottom: 1.15rem;
+  max-width: 40em;
+}
+
 footer p {
   margin-bottom: 0;
   max-width: none;
@@ -139,11 +144,6 @@ header nav a {
 
 header nav a + a {
   margin-left: 1rem;
-}
-
-p {
-  margin-bottom: 1.15rem;
-  max-width: 40em;
 }
 
 h1,
@@ -186,7 +186,7 @@ small,
 blockquote {
   margin: 10px;
   box-shadow: var(--shadow-l);
-  background: var(--white);
+  background: var(--cardBg);
   padding: 2em;
 }
 
@@ -318,6 +318,14 @@ button.small {
   --cardBg: var(--black);
 }
 
+.oled {
+  --black: #000;
+  --background: var(--black);
+  --textColor: var(--offWhite);
+  --headerBackground: var(--blackAlternate);
+  --cardBg: var(--blackAlternate);
+}
+
 @media only screen and (min-width: 600px) {
   footer small {
     float: right;
@@ -334,4 +342,30 @@ button.small {
   .flex {
     display: flex;
   }
+}
+
+.theme {
+  /* Colors */
+  --red: #ef476f;
+  --yellow: #ffd166;
+  --green: #06d6a0;
+  --blue: #26547c;
+  --white: #fffcf9;
+  --black: #222;
+
+  /* Color Intentions */
+  --primary: var(--green);
+  --danger: var(--red);
+
+  --background: var(--white);
+  --buttonColor: var(--primary);
+  --buttonTextColor: var(--black);
+  --cardBg: var(--white);
+  --footerBackground: var(--black);
+  --headerBackground: var(--blue);
+  --lineColor: var(--black);
+  --textColor: var(--black);
+
+  /* Styles */
+  --line: solid 1px var(--lineColor);
 }
